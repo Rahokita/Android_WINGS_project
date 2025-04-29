@@ -71,6 +71,16 @@
             android:background="#ffffff"
             android:text="@string/rb_female"/>
     </RadioGroup>
+
+    <Spinner
+        android:id="@+id/spCurryList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:entries="@array/sp_currylist"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"/>
+    
     <Button
         android:id="@+id/btSave"
         android:layout_width="match_parent"
