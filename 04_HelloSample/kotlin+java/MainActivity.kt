@@ -8,10 +8,10 @@ class MainActivity : AppCompatActivity() {
         val btClick = findViewById<Button>(R.id.btClick)
 
         // リスナクラスのインスタンスを生成
-        val linstener = HelloListener()
+        val listener = HelloListener()
 
         // 表示ボタンにリスナを設定
-        btClick.setOnClickListener(linstener)
+        btClick.setOnClickListener(listener)
     }
     // ボタンをクリックしたときのリスナクラス
     private inner class HelloListener : View.OnClickListener {
