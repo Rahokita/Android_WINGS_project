@@ -19,5 +19,27 @@ class OrderConfirmDialogFragment : DialogFragment() {
         // 生成したダイアログオブジェクトをリターン
         return dialog ?: throw IllegalStateException("アクティビティがNullです")
     }
+    
+    private inner class DialogButtonClickListener : DialogInterface.OnClickListener{
+        override fun onClick(dialog: DialogInterface?, which: Int) {
+            // トーストメッセージ用文字列変数を用意
+            var msg = ""
+            // タップされたアクションボタンで分岐
+            when(which){
+                // Positive Buttonならば
+                DialogInterface.BUTTON_POSITIVE ->
+                    // 注文用のメッセージを格納
+                    msg = getString(R.string.dialog_ok_toast)
+                DialogInterface.BUTTON_NEGATIVE ->
+                    // キャンセル用のメッセージを格納
+                    msg = getString(R.string.dialog_ng_toast)
+                DialogInterface.BUTTON_NEUTRAL ->
+                    // 問い合わせ用のメッセージを格納
+                    msg = getString(R.string.dialog_nu_toast)
+            }
+            // トーストの表示
+            Toast.makeText(activity,msg,Toast.LENGTH_LONG).show()
+        }
+    }
 
 }
